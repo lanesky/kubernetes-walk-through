@@ -1,0 +1,27 @@
+apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "{{ .Values.redis.master.name }}"
+spec:
+  selector:
+    matchLabels:
+      app: "{{ .Values.redis.app }}"
+      role: master
+      tier: backend
+  replicas: {{ .Values.redis.master.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.redis.app }}"
+        role: master
+        tier: backend
+    spec:
+      containers:
+      - name: master
+        image: "{{ .Values.redis.master.image.repository }}:{{ .Values.redis.master.image.tag }}"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 6379
