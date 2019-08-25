@@ -45,13 +45,13 @@ export POD_NAME=$(kubectl get pods --namespace kube-logging -l "app=kibana" -o j
   kubectl --namespace kube-logging port-forward $POD_NAME 5601
 ```
 
-Open the web with browser for verification.
+Open the web with browser for verification. The first start may take 10 minutes.
 
 ```
 http://localhost:5601
 ```
 
-Then, go to Discover menu item, configure the index to `logstash-*`, choose a @timestamp and Kibana is ready. Now we see all the logs from all namespaces in the Kubernetes cluster.
+Then, go to Discover menu item, configure the index to `logstash-*`, choose a @timestamp to create the index pattern. Then we see all the logs from all namespaces in the Kubernetes cluster.
 
 ![](img/kibana-01.png)
 
