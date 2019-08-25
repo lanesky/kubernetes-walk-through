@@ -40,7 +40,6 @@ for i in 0 1 ; do
 done
 
 
-
 for i in 0 1 ; do
   gcloud compute instances create worker-${i} \
     --async \
