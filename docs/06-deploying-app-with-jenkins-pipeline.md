@@ -2,11 +2,11 @@
 
 ## Prerequisites
 
-This part requires that the required tools ( `kubectl` and `helm`) already installed. For the credential to the kuberetes api-sever, use the `./kube/config` fetched at [Installing the Helm Tool](03-installing-helm.md).
+This part requires that the required tools ( `kubectl` and `helm`) already installed. For the credential to the kuberetes api-sever, use the `./kube/config` fetched at step of [Installing the Helm Tool](03-installing-helm.md).
 
 ## Create the jenkins pipeline
 
-1. Create a jenkins pipeline and copy  [pipeline file](../deployments/pipeline/deploy.grooy) as script.
+1. Create a jenkins pipeline and copy  [pipeline file](../deployments/pipeline/deploy.groovy) as script.
 
 2. Build the pipeline, the output should be like below.
 
