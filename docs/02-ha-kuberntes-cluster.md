@@ -40,7 +40,7 @@ The script bootstaps one of the control plane nodes.
 ./04-kubeadm-init.sh
 ```
 
-If the script run successfully, the result will be like below, which contains the join methods for control-plane and worker. 
+If the script is run successfully, the output will be as follows, which contains the join methods for control-plane and worker nodes. 
 
 ```
 ...
@@ -113,7 +113,7 @@ The script creates a load balancer for the api server of the cluster.
 ./06-add-lb-instances.sh
 ```
 
-## Verfication
+## Verification
 
 Log in the first controll-plane node.
 

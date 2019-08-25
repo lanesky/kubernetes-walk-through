@@ -28,7 +28,7 @@ gcloud compute forwarding-rules create kubernetes-forwarding-rule \
   --target-pool kubernetes-target-pool
 
 cat > kubeadm-config.yaml << EOF
-apiVersion: kubeadm.k8s.io/v1beta
+apiVersion: kubeadm.k8s.io/v1beta1
 kind: ClusterConfiguration
 kubernetesVersion: stable
 controlPlaneEndpoint: "${KUBERNETES_PUBLIC_ADDRESS}"
