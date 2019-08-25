@@ -7,12 +7,15 @@ spec:
     matchLabels:
       app: "{{ .Values.frontend.app }}"
       tier: frontend
+      track: stable
+      version: "4"
   replicas: {{ .Values.frontend.replicaCount }}
   template:
     metadata:
       labels:
         app: guestbook
         tier: frontend
+        track: stable
         version: "4"
     spec:
       containers:

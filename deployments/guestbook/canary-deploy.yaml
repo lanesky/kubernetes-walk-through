@@ -21,6 +21,7 @@ spec:
       containers:
       - name: php-redis
         image: shangkeyun/guestbook:v6
+        imagePullPolicy: Always
         resources:
           requests:
             cpu: 100m
