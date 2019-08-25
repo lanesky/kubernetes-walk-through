@@ -7,13 +7,16 @@ spec:
     matchLabels:
       app: guestbook
       tier: frontend
+      track: canary
+      version: "5"
   replicas: 1
   template:
     metadata:
       labels:
         app: guestbook
         tier: frontend
-        version: "6"
+        track: canary
+        version: "5"
     spec:
       containers:
       - name: php-redis

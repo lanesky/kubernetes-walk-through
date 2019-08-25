@@ -7,12 +7,15 @@ spec:
     matchLabels:
       app: guestbook
       tier: frontend
+      track: stable
+      version: "5"
   replicas: 3
   template:
     metadata:
       labels:
         app: guestbook
         tier: frontend
+        track: stable
         version: "5"
     spec:
       containers:
