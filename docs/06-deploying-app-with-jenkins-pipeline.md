@@ -105,3 +105,16 @@ kubectl -n development port-forward svc/frontend 8081:80
 
 ![](img/blue-green-01.png)
 
+## Note
+
+The installation of guestbook applicatoin is required for the next steps of Blue/Green deployment and Canary release. If it gets stucked on the configuration of kubectl, you can deploy the application manually by running the command as follows.
+
+```
+kubectl create ns development
+```
+
+```
+helm install --name guestbook --namespace development ./kubernetes-walk-through/deployments/charts/guestbook/
+```
+
+

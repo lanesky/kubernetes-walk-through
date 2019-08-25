@@ -1,5 +1,6 @@
 # Demonstrating the Blue/Green deployment
 
+
 In this step we use the guestbook application to demonstrate the blue/greend deployment.
 
 ## Show the current version (blue)
