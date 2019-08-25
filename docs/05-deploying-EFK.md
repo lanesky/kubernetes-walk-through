@@ -17,7 +17,7 @@ kubectl apply -f deployments/efk/
 ```
 ## Verfication
 
-Run below command to verfify all the pods. Note that we use only one cluster node. Modify the `replicas` in the `deployments/efk/es-sts.yaml` for multiple nodes if necessary.
+Run below command to verify all the pods. Note that we use only one cluster node. Modify the `replicas` in the `deployments/efk/es-sts.yaml` for multiple nodes if necessary.
 
 
 ```
@@ -38,14 +38,14 @@ kibana-598dc944d9-p4pxq   1/1     Running   2          12h
 
 ## Set up the log analysis
 
-Next run the below command to port-forward the Kibana to local.
+Next, run the below command to port-forward the Kibana to local.
 
 ```
 export POD_NAME=$(kubectl get pods --namespace kube-logging -l "app=kibana" -o jsonpath="{.items[0].metadata.name}")
   kubectl --namespace kube-logging port-forward $POD_NAME 5601
 ```
 
-Open the web with browser for verification. The first start may take 10 minutes.
+Open the web with the browser for verification. The first start may take 10 minutes.
 
 ```
 http://localhost:5601
@@ -54,11 +54,5 @@ http://localhost:5601
 Then, go to Discover menu item, configure the index to `logstash-*`, choose a @timestamp to create the index pattern. Then we see all the logs from all namespaces in the Kubernetes cluster.
 
 ![](img/kibana-01.png)
-
-
-
-
-
-
 
 

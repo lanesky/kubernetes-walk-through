@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-This part requires that the required tools ( `kubectl` and `helm`) already installed. For the credential to the kuberetes api-sever, use the `./kube/config` fetched at step of [Installing the Helm Tool](03-installing-helm.md).
+This part requires that the required tools ( `kubectl` and `helm`) already installed. For the credential to the kuberetes api-sever, use the `./kube/config` fetched at the step of [Installing the Helm Tool](03-installing-helm.md).
 
 ## Create the jenkins pipeline
 
@@ -107,7 +107,7 @@ kubectl -n development port-forward svc/frontend 8081:80
 
 ## Note
 
-The installation of guestbook applicatoin is required for the next steps of Blue/Green deployment and Canary release. If it gets stucked on the configuration of kubectl, you can deploy the application manually by running the command as follows.
+The installation of guestbook applicatoin is required for the next steps of Blue/Green deployment and Canary release. If it gets stuck on the configuration of kubectl, you can deploy the application manually by running the command as follows.
 
 ```
 kubectl create ns development

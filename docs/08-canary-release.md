@@ -1,10 +1,10 @@
 # Demonstrating the Canary release
 
 
-In the step we are going to inject a canary version into the normal version. The service forward the request to both the normal and canary version.
+In the step, we are going to inject a canary version into the normal version. The service forwards the traffic to both the normal and canary version.
 
 
-## The deployment of normal version
+## The deployment of the normal version
 
 Note that the `replicas` is `3` and `track` is `stable`.
 
@@ -102,7 +102,7 @@ Run below command to export the service definition.
 kubectl -n development get svc frontend -o yaml --export
 ```
 
-Note that the sevice uses the selector of `app`, `tier` and `version` to map the pods for forwaring the traffic. Since the selector is totally same for the deployments of normal version cand canary version, the traffic will be forwarded no matter what the version is.
+Note that the service uses the selector of `app`, `tier` and `version` to map the pods for forwarding the traffic. Since the selector is the same for the deployments of the normal version cand canary version, the traffic will be forwarded no matter what the version is.
 
 ```
 apiVersion: v1
@@ -166,7 +166,7 @@ kubectl -n development port-forward svc/frontend 8081:80
 
 ***Note***
 
-The port-forward may not reflect the canary version due to the traffic is not enough. In this case you can delete the deployment of normal version and port-forward again to verify the canary version.
+The port-forward may not reflect the canary version due to the traffic is not enough. In this case, you can delete the deployment of the normal version and port-forward again to verify the canary version.
 
 ```
 kubectl -n development delete deploy frontend-green

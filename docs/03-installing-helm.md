@@ -3,7 +3,7 @@
 
 ## Configure the kubectl config
 
-Copy the kube config file from control-plance node. 
+Copy the kube config file from control-plane node. 
 
 ```
 gcloud compute ssh controller-0 -- sudo cat /etc/kubernetes/admin.conf > $HOME/.kube/config
@@ -19,13 +19,13 @@ kubectl apply -f  deployments/helm/tiller-rbac.yaml
 
 ## Init the helm
 
-Run below command to initialize the helm on server. 
+Run below command to initialize the helm on the server. 
 
 ```
 helm init --service-account tiller --history-max 200
 ```
 
-## Verfication
+## Verification
 
 Run below command to verify the installation.
 

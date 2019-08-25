@@ -1,7 +1,7 @@
 # Demonstrating the Blue/Green deployment
 
 
-In this step we use the guestbook application to demonstrate the blue/greend deployment.
+In this step, we use the guestbook application to demonstrate the blue/green deployment.
 
 ## Show the current version (blue)
 
@@ -13,7 +13,7 @@ kubectl -n development port-forward svc/frontend 8081:80
 
 ![](img/blue-green-01.png)
 
-Run below common to check the pods for current version (blue version).
+Run below common to check the pods for the current version (blue version).
 
 ```
 kubectl -n development get pods
@@ -29,7 +29,7 @@ frontend-758b884b46-pgshd      1/1     Running   0          14m
 
 ## Deploy the green version
 
-Run below command to deploy the green version. Note that we add a deployment for green version and it doesn't affect the current version.
+Run below command to deploy the green version. Note that we add a deployment for the green version and it doesn't affect the current version.
 
 ```
 kubectl -n development apply -f deployments/guestbook/green-deploy.yaml
@@ -69,7 +69,7 @@ Edit the service of frontend.
 kubectl -n development edit svc  frontend
 ```
 
-Note that the selector contains a version of `4`. We eplace ith with `5` and it will redirect the service to the pods of green version.
+Note that the selector contains a version of `4`. We replace it with `5` and it will redirect the service to the pods of green version.
 
 ```
 # Please edit the object below. Lines beginning with a '#' will be ignored,
@@ -106,8 +106,5 @@ kubectl -n development port-forward svc/frontend 8081:80
 ```
 
 ![](img/blue-green-03.png)
-
-
-
 
 

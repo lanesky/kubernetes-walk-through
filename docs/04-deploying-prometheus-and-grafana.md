@@ -23,7 +23,7 @@ Run below command for the list of all pods in the monitoring namespace.
 kubectl -n monitoring get pods
 ```
 
-The output should be like below.
+The output should be as below.
 
 ```
 NAME                                                     READY   STATUS    RESTARTS   AGE
@@ -46,7 +46,7 @@ Run below command to port forward the prometheus to local.
 kubectl -n monitoring port-forward prometheus-prom-operator-prometheus-o-prometheus-0 9090
 ```
 
-Open the web with browser.
+Open the web with the browser.
 
 ```
 http://localhost:9090
@@ -65,7 +65,7 @@ export POD_NAME=$(kubectl get pods --namespace monitoring -l "app=grafana" -o js
   kubectl --namespace monitoring port-forward $POD_NAME 3000
 ```
 
-Open the web with browser.
+Open the web with the browser.
 
 ```
 http://localhost:3000

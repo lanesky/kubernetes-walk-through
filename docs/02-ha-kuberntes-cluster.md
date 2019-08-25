@@ -1,7 +1,7 @@
 # Installing the HA Kubernete Cluster with kubeadm
 
 
-In this step we install a HA kubernetes cluser. Since GCP limits the quota of the vCPUs to 8, we are going to build a cluster with 4 instances, each with 2 vCPUs.
+In this step, we install a HA kubernetes cluster. Since GCP limits the quota of the vCPUs to 8, we are going to build a cluster with 4 instances, each with 2 vCPUs.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ The script installs a load balancer for the control plane. The IP address of the
 
 ## Init the first control plane node from kubeadm
 
-The script bootstaps one of the control plane nodes.
+The script bootstraps one of the control plane nodes.
 
 ```
 ./04-kubeadm-init.sh
@@ -64,13 +64,13 @@ Before installing other nodes, we need to install the CNI plugin at first. The s
 
 ## Join the second control plane node with kubeadm
 
-Login to the second control plane node.
+Log in to the second control plane node.
 
 ```
 gcloud compute ssh controller-1
 ```
 
-Run the control-plane node join method. Replace with below script with the actual result mentioned above.
+Run the control-plane node join method. Replace the below script with the actual result mentioned above.
 
 ```
 sudo kubeadm join sudo kubeadm join <refer to above for control-plane join method>
@@ -85,7 +85,7 @@ Log in to the first worker.
 gcloud compute ssh worker-0
 ```
 
-Run the Replace with below script with the actual result mentioned above.
+Run the Replace with the below script with the actual result mentioned above.
 
 ```
 sudo kubeadm join sudo kubeadm join <refer to above for worker join method>
@@ -104,7 +104,7 @@ sudo kubeadm join sudo kubeadm join <refer to above for worker join method>
 ```
 
 
-## Add the second control plance node into the load blancer target pool with 
+## Add the second control plane node into the load balancer target pool with 
 
 
 The script creates a load balancer for the api server of the cluster.
@@ -115,13 +115,13 @@ The script creates a load balancer for the api server of the cluster.
 
 ## Verification
 
-Log in the first controll-plane node.
+Log in the first control-plane node.
 
 ```
 gcloud compute ssh controller-0
 ```
 
-Run `kubectl get nodes -o wide` , the output should be like below. Verfity all statuses are `READY`.
+Run `kubectl get nodes -o wide` , the output should be like below. Verify all statuses are `READY`.
 
 ```
 NAME           STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION    CONTAINER-RUNTIME
@@ -131,13 +131,13 @@ worker-0       Ready    <none>   15h   v1.14.0   10.240.0.20   <none>        Ubu
 worker-1       Ready    <none>   15h   v1.14.0   10.240.0.21   <none>        Ubuntu 16.04.6 LTS   4.15.0-1040-gcp   docker://18.6.2
 ```
 
-Run below commond to create a deployment.
+Run below command to create a deployment.
 
 ```
 kubectl run ngnix --image=nginx --replicas=2
 ```
 
-Run below commond to show pods. Verify the IPs are with 10.244.0.0/16 as specified in the pod subnetwork cidr contained in the `kubeadm-config.yaml`.
+Run below command to show pods. Verify the IPs are with 10.244.0.0/16 as specified in the pod subnetwork cidr contained in the `kubeadm-config.yaml`.
 
 ```
 kubectl get pods -o wide
