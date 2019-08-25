@@ -36,6 +36,8 @@ fluentd-w5lvg             1/1     Running   0          12h
 kibana-598dc944d9-p4pxq   1/1     Running   2          12h
 ```
 
+## Set up the log analysis
+
 Next run the below command to port-forward the Kibana to local.
 
 ```
@@ -48,3 +50,15 @@ Open the web with browser for verification.
 ```
 http://localhost:5601
 ```
+
+Then, go to Discover menu item, configure the index to `logstash-*`, choose a @timestamp and Kibana is ready. Now we see all the logs from all namespaces in the Kubernetes cluster.
+
+![](img/kibana-01.png)
+
+
+
+
+
+
+
+

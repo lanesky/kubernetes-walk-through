@@ -38,7 +38,6 @@ prom-operator-prometheus-o-operator-6f4cdc8d67-l2vjk     2/2     Running   0    
 prometheus-prom-operator-prometheus-o-prometheus-0       3/3     Running   1          15h
 ```
 
-
 ## Verify the Prometheus
 
 Run below command to port forward the prometheus to local.
@@ -52,6 +51,10 @@ Open the web with browser.
 ```
 http://localhost:9090
 ```
+
+![](img/monitoring-01.png)
+
+Check the target and find a bunch of metrics already been set.
 
 ## Verify the Grafana
 
@@ -68,3 +71,14 @@ Open the web with browser.
 http://localhost:3000
 ```
 
+Log in with the following credential.
+
+```
+User: admin
+Password: prom-operator
+
+```
+
+We can see a bunch of metrics already been set.
+
+![](img/monitoring-02.png)
