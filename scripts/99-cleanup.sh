@@ -10,7 +10,7 @@ gcloud -q compute forwarding-rules delete kubernetes-forwarding-rule \
 gcloud -q compute target-pools delete kubernetes-target-pool
 
 gcloud -q compute http-health-checks delete kubernetes
-q
+
 gcloud -q compute addresses delete mstakx-test
 
 gcloud -q compute firewall-rules delete \
