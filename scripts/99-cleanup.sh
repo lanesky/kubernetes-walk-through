@@ -9,7 +9,7 @@ gcloud -q compute forwarding-rules delete kubernetes-forwarding-rule \
 
 gcloud -q compute target-pools delete kubernetes-target-pool
 
-gcloud compute http-health-checks delete kubernetes
+gcloud -q compute http-health-checks delete kubernetes
 
 gcloud -q compute addresses delete mstakx-test
 
@@ -17,8 +17,10 @@ gcloud -q compute firewall-rules delete \
   mstakx-test-allow-nginx-service \
   mstakx-test-allow-internal \
   mstakx-test-allow-external \
-  mstakx-test-allow-health-checks \
+  mstakx-test-allow-health-check \
   kubernetes-forwarding-rule
+
+gcloud -q compute firewall-rules delete mstakx-test-allow-health-check
 
 gcloud -q compute routes delete \
   kubernetes-route-10-244-0-0-24 \
