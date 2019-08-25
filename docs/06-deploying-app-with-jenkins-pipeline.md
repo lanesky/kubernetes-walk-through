@@ -6,7 +6,7 @@ This part requires that the required tools ( `kubectl` and `helm`) already insta
 
 ## Create the jenkins pipeline
 
-1. Create a jenkins pipeline and copy  [pipeline file](../pipeline/deploy.grooy) as script.
+1. Create a jenkins pipeline and copy  [pipeline file](../deployments/pipeline/deploy.grooy) as script.
 
 2. Build the pipeline, the output should be like below.
 
