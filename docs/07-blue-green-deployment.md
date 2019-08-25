@@ -55,7 +55,7 @@ frontend-green-77f46d54bd-twg59   1/1     Running   0          11s
 Port-forward one of the green version pods to local and check with browser.
 
 ```
-export POD_NAME=$(kubectl get pods --namespace development -l "app=guestbook,tier=frontend" -o jsonpath="{.items[0].metadata.name}")
+export POD_NAME=$(kubectl get pods --namespace development -l "app=guestbook,tier=frontend,version=5" -o jsonpath="{.items[0].metadata.name}")
 kubectl --namespace development port-forward $POD_NAME 8082:80
 ```
 
