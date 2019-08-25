@@ -21,7 +21,7 @@ With the script, we are going to create a VPC and 4 instances with subnetwork an
 The script installs docker, kubeadm, kubelet, kubectl to all nodes.
 
 ```
-02-install-nodes.sh
+./02-install-nodes.sh
 ```
 
 ## Create the load balancer for the control plane
@@ -29,7 +29,7 @@ The script installs docker, kubeadm, kubelet, kubectl to all nodes.
 The script installs a load balancer for the control plane. The IP address of the load balancer will be injected into the `kubeadm-config.yaml`  in the folder automatically and will be used at the next step.
 
 ```
-03-create-lb.sh
+./03-create-lb.sh
 ```
 
 ## Init the first control plane node from kubeadm
@@ -37,7 +37,7 @@ The script installs a load balancer for the control plane. The IP address of the
 The script bootstaps one of the control plane nodes.
 
 ```
-04-kubeadm-init.sh
+./04-kubeadm-init.sh
 ```
 
 If the script run successfully, the result will be like below, which contains the join methods for control-plane and worker. 
@@ -59,7 +59,7 @@ Then you can join any number of worker nodes by running the following on each as
 Before installing other nodes, we need to install the CNI plugin at first. The script does the job.
 
 ```
-05-install-network-addon.sh
+./05-install-network-addon.sh
 ```
 
 ## Join the second control plane node with kubeadm
@@ -110,7 +110,7 @@ sudo kubeadm join sudo kubeadm join <refer to above for worker join method>
 The script creates a load balancer for the api server of the cluster.
 
 ```
-06-add-lb-instances.sh
+./06-add-lb-instances.sh
 ```
 
 ## Verfication
@@ -150,7 +150,4 @@ NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE  
 ngnix-84d9bfb884-5p9n4   1/1     Running   0          50s   10.244.3.19   worker-1   <none>           <none>
 ngnix-84d9bfb884-lrb2x   1/1     Running   0          50s   10.244.2.25   worker-0   <none>           <none>
 ```
-
-
-
 

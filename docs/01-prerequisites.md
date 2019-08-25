@@ -1,6 +1,7 @@
 # Prerequisites
 
-## Install gcloud cli tool
+
 ## gcloud cli tool
+## helm
 ## Jenkins CI server
 
