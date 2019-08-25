@@ -67,7 +67,7 @@ Before installing other nodes, we need to install the CNI plugin at first. The s
 Login to the second control plane node.
 
 ```
-gcloud compute ssh contrller-1
+gcloud compute ssh controller-1
 ```
 
 Run the control-plane node join method. Replace with below script with the actual result mentioned above.
