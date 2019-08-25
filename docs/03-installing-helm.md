@@ -19,7 +19,7 @@ kubectl apply -f  deployments/helm/tiller-rbac.yaml
 
 ## Init the helm
 
-Run below command to initialize the helm on server.
+Run below command to initialize the helm on server. 
 
 ```
 helm init --service-account tiller --history-max 200
@@ -39,3 +39,5 @@ Output
 Client: &version.Version{SemVer:"v2.14.3", GitCommit:"0e7f3b6637f7af8fcfddb3d2941fcc7cbebb0085", GitTreeState:"clean"}
 Server: &version.Version{SemVer:"v2.14.3", GitCommit:"0e7f3b6637f7af8fcfddb3d2941fcc7cbebb0085", GitTreeState:"clean"}
 ```
+
+If any errors occur, please wait 10 seconds until the installation is complete.
