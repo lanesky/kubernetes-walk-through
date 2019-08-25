@@ -94,3 +94,14 @@ NOTES:
 [Pipeline] End of Pipeline
 Finished: SUCCESS
 ```
+
+## Verfication
+
+Port-forward the guestbook application to local and show it in browser `http://localhost:8081`.
+
+```
+kubectl -n development port-forward svc/frontend 8081:80
+```
+
+![](img/blue-green-01.png)
+
